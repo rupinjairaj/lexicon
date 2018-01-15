@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Enter your word" [(ngModel)]="newWord">
+  </div>
+  <button class="btn btn-default" (click)="onClickAdd()">Add</button>
+</div>
+<div class="container" style="margin-top:20px">
+  <div class="panel panel-primary" *ngFor="let x of responseWordData">
+    <div class="panel-heading">
+      <h3 class="panel-title"><h4>{{x.word}}</h4></h3>
+    </div>
+    <h5>Definition</h5>
+    <div class="panel-body" *ngFor="let xDef of x.definitions">
+        <li>{{xDef}}</li>
+    </div>
+    <h5>Examples</h5>
+    <div class="panel-body" *ngFor="let xExample of x.examples">
+        <li>{{xExample}}</li>
+    </div>
+  </div>
+</div>
