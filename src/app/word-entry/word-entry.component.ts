@@ -22,7 +22,7 @@ export class WordEntryComponent implements OnInit {
   }
 
   onClickAdd() {
-    let data = JSON.stringify({newWord: this.newWord})
+    let data = JSON.stringify({newWord: this.newWord.toLowerCase().trim()})
     console.log(data)
     this.http.getWordData(data).subscribe(x => {
       console.log(x)
