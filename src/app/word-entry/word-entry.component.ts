@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../shared/http.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-word-entry',
@@ -7,14 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WordEntryComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute, 
+    private http: HttpService,
+    private router: Router
+  ) { }
 
   newWord: string
+  responseWordData: Object
 
   ngOnInit() {
   }
 
   onClickAdd() {
-    console.log(this.newWord)
+    let data = JSON.stringify({newWord: this.newWord})
+    console.log(data)
+    this.http.getWordData(data).subscribe(x => {
+      console.log(x)
+      this.responseWordData = x;
+    })
   }
 }
