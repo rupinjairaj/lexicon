@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../shared/http.service';
-
 @Component({
   selector: 'app-list-view',
   templateUrl: './list-view.component.html',
@@ -17,6 +16,9 @@ export class ListViewComponent implements OnInit {
       console.log(x)
       this.responseWordData = x
     })
+  constructor() { }
+
+  ngOnInit() {
   }
 
 }
