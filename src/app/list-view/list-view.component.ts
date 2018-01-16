@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../shared/http.service';
 
 @Component({
   selector: 'app-list-view',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpService) { }
+
+  responseWordData: Object
 
   ngOnInit() {
+    this.http.getListData().subscribe(x => {
+      console.log(x)
+      this.responseWordData = x
+    })
   }
 
 }

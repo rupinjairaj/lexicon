@@ -4,18 +4,41 @@
   </div>
   <button class="btn btn-default" (click)="onClickAdd()">Add</button>
 </div>
+
 <div class="container" style="margin-top:20px">
-  <div class="panel panel-primary" *ngFor="let x of responseWordData">
+  <div class="panel panel-default" *ngFor="let x of responseWordData">
+    <!-- Default panel contents -->
     <div class="panel-heading">
-      <h3 class="panel-title"><h4>{{x.word}}</h4></h3>
+      <b>{{x.word}}</b>
     </div>
-    <h5>Definition</h5>
     <div class="panel-body" *ngFor="let xDef of x.definitions">
-        <li>{{xDef}}</li>
+      {{xDef}}
     </div>
-    <h5>Examples</h5>
-    <div class="panel-body" *ngFor="let xExample of x.examples">
-        <li>{{xExample}}</li>
-    </div>
+    <!-- Table -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Definition</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let xDef of x.definitions">
+          <td>{{xDef}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Table -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Examples</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let xExample of x.examples">
+          <td>{{xExample}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>

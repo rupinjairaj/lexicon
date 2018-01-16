@@ -28,4 +28,13 @@ export class HttpService {
       }
     )
   }
+
+  getListData() {
+    return this.http.get(
+      AppConstants.LexiconAPI,
+      {
+        headers: this.setHeaders()
+      }
+    )
+  }
 }
