@@ -14,11 +14,7 @@ export class ListViewComponent implements OnInit {
   ngOnInit() {
     this.http.getListData().subscribe(x => {
       console.log(x)
-      this.responseWordData = x
+      this.responseWordData = x;
     })
-  constructor() { }
-
-  ngOnInit() {
   }
-
 }

@@ -24,7 +24,6 @@ export class WordEntryComponent implements OnInit {
   onClickAdd() {
     let data = JSON.stringify({newWord: this.newWord.toLowerCase().trim()})
     this.http.getWordData(data).subscribe(x => {
-    this.http.getWordData(data).subscribe(x => {
       this.responseWordData = x;
     })
   }
