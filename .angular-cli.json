@@ -20,9 +20,12 @@
       "prefix": "app",
       "styles": [
         "styles.css",
-        "assets/lib/dist/bootstrap.min.css"
+        "assets/lib/dist/css/bootstrap.min.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "assets/lib/dist/js/jquery-3.2.1.min.js",        
+        "assets/lib/dist/js/bootstrap.min.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
